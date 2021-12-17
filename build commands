@@ -1,0 +1,168 @@
+normal 
+
+./build/ARM/gem5.opt -d spec_results/specbzip configs/example/se.py --cpu-type=MinorCPU --caches --l2cache -c spec_cpu2006/401.bzip2/src/specbzip -o "spec_cpu2006/401.bzip2/data/input.program 10" -I 100000000
+ ./build/ARM/gem5.opt -d spec_results/specmcf configs/example/se.py --cpu-type=MinorCPU --caches --l2cache -c spec_cpu2006/429.mcf/src/specmcf -o "spec_cpu2006/429.mcf/data/inp.in" -I 100000000
+ ./build/ARM/gem5.opt -d spec_results/spechmmer configs/example/se.py --cpu-type=MinorCPU --caches --l2cache -c spec_cpu2006/456.hmmer/src/spechmmer -o "--fixed 0 --mean 325 --num 45000 --sd 200 --seed 0 spec_cpu2006/456.hmmer/data/bombesin.hmm" -I 100000000
+ ./build/ARM/gem5.opt -d spec_results/specsjeng configs/example/se.py --cpu-type=MinorCPU --caches --l2cache -c spec_cpu2006/458.sjeng/src/specsjeng -o "spec_cpu2006/458.sjeng/data/test.txt" -I 100000000
+ ./build/ARM/gem5.opt -d spec_results/speclibm configs/example/se.py --cpu-type=MinorCPU --caches --l2cache -c spec_cpu2006/470.lbm/src/speclibm -o "20spec_cpu2006/470.lbm/data/lbm.in 0 1spec_cpu2006/470.lbm/data/100_100_130_cf_a.of" -I 100000000
+
+
+sta 1.5GHz
+ ./build/ARM/gem5.opt -d spec_results/specbzip15 configs/example/se.py --cpu-type=MinorCPU --cpu-clock=1.5GHz --caches --l2cache -c spec_cpu2006/401.bzip2/src/specbzip -o "spec_cpu2006/401.bzip2/data/input.program 10" -I 100000000
+ ./build/ARM/gem5.opt -d spec_results/specmcf15 configs/example/se.py --cpu-type=MinorCPU --cpu-clock=1.5GHz --caches --l2cache -c spec_cpu2006/429.mcf/src/specmcf -o "spec_cpu2006/429.mcf/data/inp.in" -I 100000000
+ ./build/ARM/gem5.opt -d spec_results/spechmmer15 configs/example/se.py --cpu-type=MinorCPU --cpu-clock=1.5GHz --caches --l2cache -c spec_cpu2006/456.hmmer/src/spechmmer -o "--fixed 0 --mean 325 --num 45000 --sd 200 --seed0spec_cpu2006/456.hmmer/data/bombesin.hmm" -I 100000000
+ ./build/ARM/gem5.opt -d spec_results/specsjeng15 configs/example/se.py --cpu-type=MinorCPU --cpu-clock=1.5GHz --caches --l2cache -c spec_cpu2006/458.sjeng/src/specsjeng -o "spec_cpu2006/458.sjeng/data/test.txt" -I 100000000
+ ./build/ARM/gem5.opt -d spec_results/speclibm15 configs/example/se.py --cpu-type=MinorCPU --cpu-clock=1.5GHz --caches --l2cache -c spec_cpu2006/470.lbm/src/speclibm -o "20spec_cpu2006/470.lbm/data/lbm.in 0 1spec_cpu2006/470.lbm/data/100_100_130_cf_a.of" -I 100000000
+
+
+
+
+
+
+
+401
+
+
+
+
+
+. 
+./build/ARM/gem5.opt -d spec_results/specbzippr2 configs/example/se.py --cpu-type=MinorCPU --caches --l2cache --l1d_size=512kB --l1i_size=2MB --l2_size=512kB --l1i_assoc=8 --l1d_assoc=8 --l2_assoc=2 --cacheline_size=64 -c spec_cpu2006/401.bzip2/src/specbzip -o "spec_cpu2006/401.bzip2/data/input.program 10" -I 100000000
+./build/ARM/gem5.opt -d spec_results/specbzippr3 configs/example/se.py --cpu-type=MinorCPU --caches --l2cache --l1d_size=512kB --l1i_size=2MB --l2_size=512kB --l1i_assoc=2 --l1d_assoc=1 --l2_assoc=8 --cacheline_size=64 -c spec_cpu2006/401.bzip2/src/specbzip -o "spec_cpu2006/401.bzip2/data/input.program 10" -I 100000000
+
+./build/ARM/gem5.opt -d spec_results/specbzippr4 configs/example/se.py --cpu-type=MinorCPU --caches --l2cache --l1d_size=512kB --l1i_size=2MB --l2_size=512kB --l1i_assoc=1 --l1d_assoc=2 --l2_assoc=2 --cacheline_size=32 -c spec_cpu2006/401.bzip2/src/specbzip -o "spec_cpu2006/401.bzip2/data/input.program 10" -I 100000000
+
+
+./build/ARM/gem5.opt -d spec_results/specbzipl2sizeassoc configs/example/se.py --cpu-type=MinorCPU --caches --l2cache  --l1d_size=512kB --l1i_size=1MB --l2_size=2MB --l1i_assoc=8 --l1d_assoc=4 --l2_assoc=2 --cacheline_size=64 -c spec_cpu2006/401.bzip2/src/specbzip -o "spec_cpu2006/401.bzip2/data/input.program 10" -I 100000000
+
+
+
+
+
+mcf
+
+./build/ARM/gem5.opt -d spec_results/specmcfpl1 configs/example/se.py --cpu-type=MinorCPU --caches  --l2cache --l1d_size=512kB --l1i_size=2MB  -c spec_cpu2006/429.mcf/src/specmcf -o "spec_cpu2006/429.mcf/data/inp.in" -I 100000000
+
+./build/ARM/gem5.opt -d spec_results/specmcfl2 configs/example/se.py --cpu-type=MinorCPU --caches  --l2cache --l2_size=512kB -c spec_cpu2006/429.mcf/src/specmcf -o "spec_cpu2006/429.mcf/data/inp.in" -I 100000000
+
+./build/ARM/gem5.opt -d spec_results/specmcfl1assoc configs/example/se.py --cpu-type=MinorCPU --caches  --l2cache  --l1i_assoc=2 --l1d_assoc=8 -c spec_cpu2006/429.mcf/src/specmcf -o "spec_cpu2006/429.mcf/data/inp.in" -I 100000000
+
+./build/ARM/gem5.opt -d spec_results/specmcfl2assoc configs/example/se.py --cpu-type=MinorCPU --caches  --l2cache  --l2_assoc=8 -c spec_cpu2006/429.mcf/src/specmcf -o "spec_cpu2006/429.mcf/data/inp.in" -I 100000000
+
+
+./build/ARM/gem5.opt -d spec_results/specmcfcachreline configs/example/se.py --cpu-type=MinorCPU --caches  --l2cache --cacheline_size=32 -c spec_cpu2006/429.mcf/src/specmcf -o "spec_cpu2006/429.mcf/data/inp.in" -I 100000000
+./build/ARM/gem5.opt -d spec_results/specmcfcachelinebig configs/example/se.py --cpu-type=MinorCPU --caches  --l2cache --cacheline_size=128 -c spec_cpu2006/429.mcf/src/specmcf -o "spec_cpu2006/429.mcf/data/inp.in" -I 100000000
+
+
+./build/ARM/gem5.opt -d spec_results/specmcfpr2 configs/example/se.py --cpu-type=MinorCPU --caches  --l2cache --l1d_size=1MB --l1i_size=32kB --l2_size=2MB --l1i_assoc=1 --l1d_assoc=8 --l2_assoc=2 --cacheline_size=32 -c spec_cpu2006/429.mcf/src/specmcf -o "spec_cpu2006/429.mcf/data/inp.in" -I 100000000
+
+./build/ARM/gem5.opt -d spec_results/specmcfpr1 configs/example/se.py --cpu-type=MinorCPU --caches  --l2cache --l1d_size=512kB --l1i_size=2MB --l2_size=512k --l1i_assoc=1 --l1d_assoc=8 --l2_assoc=2 --cacheline_size=32 -c spec_cpu2006/429.mcf/src/specmcf -o "spec_cpu2006/429.mcf/data/inp.in" -I 100000000
+
+
+
+./build/ARM/gem5.opt -d spec_results/specmcfpr2 configs/example/se.py --cpu-type=MinorCPU --caches  --l2cache --l1d_size=1MB --l1i_size=32kB --l2_size=2MB --l1i_assoc=1 --l1d_assoc=8 --l2_assoc=2 --cacheline_size=32 -c spec_cpu2006/429.mcf/src/specmcf -o "spec_cpu2006/429.mcf/data/inp.in" -I 100000000
+
+
+
+
+
+
+
+
+hmmer 
+
+
+./build/ARM/gem5.opt -d spec_results/spechmmerpl1 configs/example/se.py --cpu-type=MinorCPU --caches  --l2cache --l1d_size=512kB --l1i_size=2MB  -c spec_cpu2006/456.hmmer/src/spechmmer -o "--fixed 0 --mean 325 --num 45000 --sd 200 --seed 0 spec_cpu2006/456.hmmer/data/bombesin.hmm" -I 100000000
+
+./build/ARM/gem5.opt -d spec_results/spechmmerl2 configs/example/se.py --cpu-type=MinorCPU --caches  --l2cache --l2_size=512kB -c spec_cpu2006/456.hmmer/src/spechmmer -o "--fixed 0 --mean 325 --num 45000 --sd 200 --seed 0 spec_cpu2006/456.hmmer/data/bombesin.hmm" -I 100000000
+
+./build/ARM/gem5.opt -d spec_results/spechmmerl1assoc configs/example/se.py --cpu-type=MinorCPU --caches  --l2cache  --l1i_assoc=2 --l1d_assoc=8 -c spec_cpu2006/456.hmmer/src/spechmmer -o "--fixed 0 --mean 325 --num 45000 --sd 200 --seed 0 spec_cpu2006/456.hmmer/data/bombesin.hmm" -I 100000000
+
+./build/ARM/gem5.opt -d spec_results/spehmmerl2assoc configs/example/se.py --cpu-type=MinorCPU --caches  --l2cache  --l2_assoc=8 -c spec_cpu2006/456.hmmer/src/spechmmer -o "--fixed 0 --mean 325 --num 45000 --sd 200 --seed 0 spec_cpu2006/456.hmmer/data/bombesin.hmm" -I 100000000
+
+
+./build/ARM/gem5.opt -d spec_results/spechmmercachreline configs/example/se.py --cpu-type=MinorCPU --caches  --l2cache --cacheline_size=32 -c spec_cpu2006/456.hmmer/src/spechmmer -o "--fixed 0 --mean 325 --num 45000 --sd 200 --seed 0 spec_cpu2006/456.hmmer/data/bombesin.hmm" -I 100000000
+
+./build/ARM/gem5.opt -d spec_results/spechmmercachelinebig configs/example/se.py --cpu-type=MinorCPU --caches  --l2cache --cacheline_size=128 -c spec_cpu2006/456.hmmer/src/spechmmer -o "--fixed 0 --mean 325 --num 45000 --sd 200 --seed 0 spec_cpu2006/456.hmmer/data/bombesin.hmm" -I 100000000
+
+
+./build/ARM/gem5.opt -d spec_results/spechmmerpr1 configs/example/se.py --cpu-type=MinorCPU --caches  --l2cache --l1d_size=512kB --l1i_size=1MB --l2_size=2MB --l1i_assoc=2 --l1d_assoc=2 --l2_assoc=8 --cacheline_size=128 -c spec_cpu2006/456.hmmer/src/spechmmer -o "--fixed 0 --mean 325 --num 45000 --sd 200 --seed 0 spec_cpu2006/456.hmmer/data/bombesin.hmm" -I 100000000
+
+
+
+
+jeng
+
+./build/ARM/gem5.opt -d spec_results/specsjengl1 configs/example/se.py --cpu-type=MinorCPU --caches --l2cache --l1d_size=512kB --l1i_size=2MB -c spec_cpu2006/458.sjeng/src/specsjeng -o "spec_cpu2006/458.sjeng/data/test.txt" -I 100000000
+
+./build/ARM/gem5.opt -d spec_results/specsjengl2 configs/example/se.py --cpu-type=MinorCPU --caches --l2cache ---l2_size=512kB -c spec_cpu2006/458.sjeng/src/specsjeng -o "spec_cpu2006/458.sjeng/data/test.txt" -I 100000000
+
+./build/ARM/gem5.opt -d spec_results/specsjengl1assoc configs/example/se.py --cpu-type=MinorCPU --caches --l2cache --l1i_assoc=2 --l1d_assoc=8 -c spec_cpu2006/458.sjeng/src/specsjeng -o "spec_cpu2006/458.sjeng/data/test.txt" -I 100000000
+
+./build/ARM/gem5.opt -d spec_results/specsjengl2assoc configs/example/se.py --cpu-type=MinorCPU --caches --l2cache --l2_assoc=8 -c spec_cpu2006/458.sjeng/src/specsjeng -o "spec_cpu2006/458.sjeng/data/test.txt" -I 100000000
+
+./build/ARM/gem5.opt -d spec_results/specsjengcachesize configs/example/se.py --cpu-type=MinorCPU --caches --l2cache --cacheline_size=32  -c spec_cpu2006/458.sjeng/src/specsjeng -o "spec_cpu2006/458.sjeng/data/test.txt" -I 100000000
+
+
+
+./build/ARM/gem5.opt -d spec_results/specsjeng configs/example/se.py --cpu-type=MinorCPU --caches --l2cache -c spec_cpu2006/458.sjeng/src/specsjeng -o "spec_cpu2006/458.sjeng/data/test.txt" -I 100000000
+
+
+
+
+
+
+
+libm 
+
+
+./build/ARM/gem5.opt -d spec_results/speclibml1 configs/example/se.py --cpu-type=MinorCPU --caches --l2cache --l1d_size=512kB --l1i_size=2MB -c spec_cpu2006/470.lbm/src/speclibm -o "20spec_cpu2006/470.lbm/data/lbm.in 0 1spec_cpu2006/470.lbm/data/100_100_130_cf_a.of" -I 100000000
+
+./build/ARM/gem5.opt -d spec_results/speclibml2 configs/example/se.py --cpu-type=MinorCPU --caches --l2cache ---l2_size=512kB -c spec_cpu2006/470.lbm/src/speclibm -o "20spec_cpu2006/470.lbm/data/lbm.in 0 1spec_cpu2006/470.lbm/data/100_100_130_cf_a.of" -I 100000000
+
+./build/ARM/gem5.opt -d spec_results/speclibml1assoc configs/example/se.py --cpu-type=MinorCPU --caches --l2cache  --l1i_assoc=2 --l1d_assoc=8 -c spec_cpu2006/470.lbm/src/speclibm -o "20spec_cpu2006/470.lbm/data/lbm.in 0 1spec_cpu2006/470.lbm/data/100_100_130_cf_a.of" -I 100000000
+
+./build/ARM/gem5.opt -d spec_results/speclibml2assoc configs/example/se.py --cpu-type=MinorCPU --caches --l2cache  --l2_assoc=8 -c spec_cpu2006/470.lbm/src/speclibm -o "20spec_cpu2006/470.lbm/data/lbm.in 0 1spec_cpu2006/470.lbm/data/100_100_130_cf_a.of" -I 100000000
+
+./build/ARM/gem5.opt -d spec_results/speclibmcacheline configs/example/se.py --cpu-type=MinorCPU --caches --l2cache --cacheline_size=32  -c spec_cpu2006/470.lbm/src/speclibm -o "20spec_cpu2006/470.lbm/data/lbm.in 0 1spec_cpu2006/470.lbm/data/100_100_130_cf_a.of" -I 100000000
+
+./build/ARM/gem5.opt -d spec_results/speclibm configs/example/se.py --cpu-type=MinorCPU --caches --l2cache -c spec_cpu2006/470.lbm/src/speclibm -o "20spec_cpu2006/470.lbm/data/lbm.in 0 1spec_cpu2006/470.lbm/data/100_100_130_cf_a.of" -I 100000000
+
+
+
+
+2do
+
+./build/ARM/gem5.opt -d spec_results/speclibmpr1 configs/example/se.py --cpu-type=MinorCPU --caches --l2cache --l1d_size=1MB --l1i_size=512kB --l2_size=2MB --l1i_assoc=2 --l1d_assoc=2 --l2_assoc=2 --cacheline_size=128 --cpu-clock=1GHz -c spec_cpu2006/470.lbm/src/speclibm -o "20 spec_cpu2006/470.lbm/data/lbm.in 0 1 spec_cpu2006/470.lbm/data/100_100_130_cf_a.of" -I 100000000
+
+
+./build/ARM/gem5.opt -d spec_results/specbzippr2big configs/example/se.py --cpu-type=MinorCPU --caches --l2cache --l1d_size=1MB --l1i_size=64kB --l2_size=2MB --l1i_assoc=2 --l1d_assoc=4 --l2_assoc=8 --cacheline_size=128 -c spec_cpu2006/401.bzip2/src/specbzip -o "spec_cpu2006/401.bzip2/data/input.program 10" -I 100000000
+
+
+./build/ARM/gem5.opt -d spec_results/specbzippr2 configs/example/se.py --cpu-type=MinorCPU --caches --l2cache --l1d_size=1MB --l1i_size=64kB --l2_size=2MB --l1i_assoc=2 --l1d_assoc=4 --l2_assoc=8 --cacheline_size=64 -c spec_cpu2006/401.bzip2/src/specbzip -o "spec_cpu2006/401.bzip2/data/input.program 10" -I 100000000
+
+./build/ARM/gem5.opt -d spec_results/specmcfpr2 configs/example/se.py --cpu-type=MinorCPU --caches  --l2cache --l1d_size=1MB --l1i_size=32kB --l2_size=2MB --l1i_assoc=2 --l1d_assoc=4 --l2_assoc=8 --cacheline_size=32 -c spec_cpu2006/429.mcf/src/specmcf -o "spec_cpu2006/429.mcf/data/inp.in" -I 10000000000
+
+
+
+
+
+
+./build/ARM/gem5.opt -d spec_results/speclibmcacheline configs/example/se.py --cpu-type=MinorCPU --caches --l2cache --l1d_size=512kB --l1i_size=32kB --l2_size=2MB --l1i_assoc=2 --l1d_assoc=4 --l2_assoc=8 --cacheline_size=64  -c spec_cpu2006/470.lbm/src/speclibm -o "20spec_cpu2006/470.lbm/data/lbm.in 0 1spec_cpu2006/470.lbm/data/100_100_130_cf_a.of" -I 100000000
+
+
+./build/ARM/gem5.opt -d spec_results/specsjeng configs/example/se.py --cpu-type=MinorCPU --caches --l2cache -c spec_cpu2006/458.sjeng/src/specsjeng -o "spec_cpu2006/458.sjeng/data/test.txt" -I 100000000
+
+
+
+
+---- 
+./build/ARM/gem5.opt -d spec_results/spechmmerpr1 configs/example/se.py --cpu-type=MinorCPU --caches  --l2cache --l1d_size=512kB --l1i_size=64kB --l2_size=2MB --l1i_assoc=4 --l1d_assoc=2 --l2_assoc=8 --cacheline_size=128 -c spec_cpu2006/456.hmmer/src/spechmmer -o "--fixed 0 --mean 325 --num 45000 --sd 200 --seed 0 spec_cpu2006/456.hmmer/data/bombesin.hmm" -I 100000000
+
+
+
+
+
+
+
+
