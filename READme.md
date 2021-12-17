@@ -41,7 +41,7 @@
 ![lbm](https://github.com/username644/erg.Aoc2/blob/main/lbm%20exper.png?raw=true)
 ![mcf](https://github.com/username644/erg.Aoc2/blob/main/mcf%20exper.png?raw=true)
 
-### Ερώτημα 1.
+
 
 
 ## Βήμα 3ο 
