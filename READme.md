@@ -51,34 +51,13 @@
 
   Κ = [Α(L1i_size/32kB * L1i_assoc) + B(L1d_size/32kB * L1d_assoc) + C(L2_size/1MB * L2_assoc)] * cache_line_size/32
 
--    c κόστος λόγω associativity
--   a_L1i associativity της L1 instruction cache
--   a_L1d associativity της L1 data cache
--   a_L2 associativity της L2 cache
--   s_L1i μέγεθος της L1 instruction cache σε KB
--   s_L1d μέγεθος της L1 data cache σε KB
--   s_L2 μέγεθος της L2 cache σε KB
-
 
 Γνωρίζουμε πως η L1είναι πιό ακριβή ανά byte από την  L2 , άρα θέτουμε A=5c. Η L1 instruction cache είναι πιο ακριβής, και επομένως πιο φθηνή, σε σχέση με τη data cache. Άρα θέτουμε Β = 2 * Α.
 
 Για να δούμε ποιά αρχιτεκτονική θα εφαρμόσουμε, πρέπει να επιλέξουμε τις τιμές που ελαχιστοποιούν την συνάρτηση κόστους-χρόνου εκτέλεσης, η οποία είναι η εξής:
-func = K * CPI
-
-Πιο κάτω φαίνονται τα διαγράμματα για κάθε benchmark:
 
 
- 
-
-
- 
- 
-
-
- 
-
-Ακριβής τιμές:
-
+![zip_cost](https://github.com/username644/erg.Aoc2/blob/main/zip%20cost%20analysis.png?raw=true)
 zip
 |build|cost|
 |---|---|
@@ -87,6 +66,13 @@ zip
 |3|	607|
 |4	|1212|
 |5|	1600|
+
+Επιλέγεται το build 1.
+
+
+
+
+![hmmer_cost](https://github.com/username644/erg.Aoc2/blob/main/hmmer%20cost%20analysis.png?raw=true)
 
 hmmer
 |build|cost|
@@ -98,7 +84,9 @@ hmmer
 |5|	68|
 |6|	455|
 
+Επιλέγεται το build 2.
 
+![libm_cost](https://github.com/username644/erg.Aoc2/blob/main/libm%20cost%20analysis.png?raw=true)
 
 libm
 |build|cost|
@@ -107,6 +95,11 @@ libm
 |2|	120|
 |3|	2506|
 |4|	204|
+
+Επιλέγεται το build 1.
+
+
+![mcf_cost](https://github.com/username644/erg.Aoc2/blob/main/mcf%20cost%20analysis.png?raw=true)
 
 mcf
 |build|cost|
@@ -117,7 +110,8 @@ mcf
 |4|	97|
 |5|	884|
 |6	|378|
-
+ 
+ Επιλέγεται το build 3.
 
 
 
