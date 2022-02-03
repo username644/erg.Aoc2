@@ -87,7 +87,8 @@ cost zip
 |4	|1212|
 |5|	1600|
 
-cost hammer
+hmmer
+|build|cost|
 |---|---|
 |1|	16|
 |2|	31|
