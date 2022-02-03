@@ -49,7 +49,16 @@
 
 Για το κόστος της κάθε επιλογής λαμβάνουμε υπόψη το άθροισμα του χρηματικού κόστους κάθε επιλογής και της πολυπλοκότητάς της. Έχοντας κατά νου να δώσουμε μια κατά το δυνατόν ρεαλιστική εικόνα του κόστους κάθε επιλογής, συλλέξαμε δεδομένα από κατά το δυνατόν ρεαλιστικές πηγές και καταλήξαμε στην εξής συνάρτηση κόστους:
 
-Κ = [Α(L1i_size/32kB * L1i_assoc) + B(L1d_size/32kB * L1d_assoc) + C(L2_size/1MB * L2_assoc)] * cache_line_size/32
+  Κ = [Α(L1i_size/32kB * L1i_assoc) + B(L1d_size/32kB * L1d_assoc) + C(L2_size/1MB * L2_assoc)] * cache_line_size/32
+
+-    c κόστος λόγω associativity
+-   a_L1i associativity της L1 instruction cache
+-   a_L1d associativity της L1 data cache
+-   a_L2 associativity της L2 cache
+-   s_L1i μέγεθος της L1 instruction cache σε KB
+-   s_L1d μέγεθος της L1 data cache σε KB
+-   s_L2 μέγεθος της L2 cache σε KB
+
 
 Γνωρίζουμε πως η L1είναι πιό ακριβή ανά byte από την  L2 , άρα θέτουμε A=5c. Η L1 instruction cache είναι πιο ακριβής, και επομένως πιο φθηνή, σε σχέση με τη data cache. Άρα θέτουμε Β = 2 * Α.
 
@@ -70,13 +79,13 @@ func = K * CPI
 
 Ακριβής τιμές:
 
-CPI zip
+ zip
 
-1	55
-2	119
-3	607
-4	1212
-5	1600
+|1|	55|
+|2|	119|
+|3|	607|
+|4	|1212|
+|5|	1600|
 
 CPI hammer
 
@@ -106,13 +115,6 @@ CPI
 6	378
 
 
--    c κόστος λόγω associativity
--   a_L1i associativity της L1 instruction cache
--   a_L1d associativity της L1 data cache
--   a_L2 associativity της L2 cache
--   s_L1i μέγεθος της L1 instruction cache σε KB
--   s_L1d μέγεθος της L1 data cache σε KB
--   s_L2 μέγεθος της L2 cache σε KB
 
 
 ### Κριτική 
