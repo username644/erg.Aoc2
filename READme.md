@@ -79,7 +79,8 @@ func = K * CPI
 
 Ακριβής τιμές:
 
-cost zip
+zip
+|build|cost|
 |---|---|
 |1|	55|
 |2|	119|
@@ -99,14 +100,16 @@ hmmer
 
 
 
-cost libm
+libm
+|build|cost|
 |---|---|
 |1|	173|
 |2|	120|
 |3|	2506|
 |4|	204|
 
-cost mcf
+mcf
+|build|cost|
 |---|---|
 |1	|34|
 |2	|70|
